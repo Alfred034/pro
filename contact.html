@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Contact Eyewear for product questions, order help, and customer support.">
+    <title>Contact Us | Eyewear</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+      :root {
+        --contact-ink: #20201e;
+        --contact-muted: #77746f;
+        --contact-paper: #f7f6f2;
+        --contact-line: #e8e6df;
+        --contact-gold: #c4ab7c;
+      }
+
+      body {
+        background: var(--contact-paper);
+      }
+
+      .contact-topbar {
+        background: #1b1b19;
+      }
+
+      .contact-topbar-inner {
+        max-width: 1240px;
+        min-height: 76px;
+        margin: 0 auto;
+        padding: 12px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .contact-brand img {
+        display: block;
+        width: auto;
+        max-height: 42px;
+      }
+
+      .contact-home {
+        color: #f8f7f3;
+        text-decoration: none;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+      }
+
+      .contact-home:hover {
+        color: var(--contact-gold);
+      }
+
+      .contact-hero {
+        position: relative;
+        overflow: hidden;
+        padding: clamp(72px, 11vw, 132px) 24px;
+        color: #fff;
+        background:
+          linear-gradient(90deg, rgb(20 20 18 / 76%), rgb(20 20 18 / 36%)),
+          url("images/background-img.jpg") center 48% / cover no-repeat;
+      }
+
+      .contact-hero-inner {
+        position: relative;
+        z-index: 1;
+        max-width: 1240px;
+        margin: 0 auto;
+      }
+
+      .contact-eyebrow {
+        margin-bottom: 14px;
+        color: #e2d3b3;
+        font-size: 0.78rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+
+      .contact-hero h1 {
+        max-width: 720px;
+        margin: 0;
+        font-family: "Marcellus", serif;
+        font-size: clamp(2.6rem, 6vw, 5rem);
+        font-weight: 400;
+        line-height: 1.08;
+      }
+
+      .contact-hero p:last-child {
+        max-width: 600px;
+        margin: 20px 0 0;
+        color: rgb(255 255 255 / 84%);
+        font-size: 1.08rem;
+        line-height: 1.8;
+      }
+
+      .contact-content {
+        max-width: 1240px;
+        margin: -38px auto 0;
+        padding: 0 24px 88px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .contact-cards {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+        margin-bottom: 28px;
+      }
+
+      .contact-card,
+      .contact-form-card,
+      .contact-note {
+        border: 1px solid var(--contact-line);
+        border-radius: 12px;
+        background: #fff;
+        box-shadow: 0 12px 34px rgb(30 28 22 / 6%);
+      }
+
+      .contact-card {
+        display: flex;
+        align-items: flex-start;
+        gap: 18px;
+        padding: 28px;
+      }
+
+      .contact-icon {
+        flex: 0 0 50px;
+        width: 50px;
+        height: 50px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        color: var(--contact-ink);
+        background: var(--contact-paper);
+        font-size: 1.45rem;
+      }
+
+      .contact-card h2,
+      .contact-form-card h2 {
+        margin: 0 0 8px;
+        color: var(--contact-ink);
+        font-family: "Marcellus", serif;
+        font-size: 1.45rem;
+        font-weight: 400;
+      }
+
+      .contact-card p,
+      .contact-form-card > p,
+      .contact-note p {
+        color: var(--contact-muted);
+        line-height: 1.7;
+      }
+
+      .contact-card p {
+        margin: 0 0 8px;
+      }
+
+      .contact-action {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--contact-ink);
+        font-weight: 600;
+        text-decoration: none;
+        overflow-wrap: anywhere;
+      }
+
+      .contact-action:hover {
+        color: #876f44;
+      }
+
+      .contact-lower {
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(260px, 0.8fr);
+        gap: 22px;
+        align-items: start;
+      }
+
+      .contact-form-card {
+        padding: clamp(24px, 4vw, 42px);
+      }
+
+      .contact-form-card > p {
+        margin-bottom: 26px;
+      }
+
+      .contact-form {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .contact-field {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .contact-field-full {
+        grid-column: 1 / -1;
+      }
+
+      .contact-field label {
+        color: var(--contact-ink);
+        font-size: 0.84rem;
+        font-weight: 600;
+      }
+
+      .contact-field input,
+      .contact-field select,
+      .contact-field textarea {
+        width: 100%;
+        border: 1px solid var(--contact-line);
+        border-radius: 7px;
+        padding: 12px 14px;
+        color: var(--contact-ink);
+        background: #fff;
+        font: inherit;
+      }
+
+      .contact-field textarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .contact-field input:focus,
+      .contact-field select:focus,
+      .contact-field textarea:focus {
+        outline: 2px solid rgb(196 171 124 / 34%);
+        border-color: var(--contact-gold);
+      }
+
+      .contact-submit {
+        grid-column: 1 / -1;
+        min-height: 52px;
+        border: 0;
+        border-radius: 7px;
+        padding: 12px 20px;
+        color: #fff;
+        background: #20201e;
+        font: inherit;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background 160ms ease;
+      }
+
+      .contact-submit:hover {
+        background: #4a453b;
+      }
+
+      .contact-note {
+        padding: 30px;
+        background: #eeece5;
+        box-shadow: none;
+      }
+
+      .contact-note h2 {
+        margin: 0 0 14px;
+        font-family: "Marcellus", serif;
+        font-size: 1.5rem;
+        font-weight: 400;
+      }
+
+      .contact-note p:last-child {
+        margin-bottom: 0;
+      }
+
+      .contact-footer {
+        padding: 22px 24px;
+        color: #d7d4cb;
+        background: #1b1b19;
+        text-align: center;
+        font-size: 0.9rem;
+      }
+
+      .contact-footer a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .contact-footer a:hover {
+        color: var(--contact-gold);
+      }
+
+      @media (max-width: 767.98px) {
+        .contact-cards,
+        .contact-lower {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-content {
+          padding-right: 16px;
+          padding-left: 16px;
+        }
+      }
+
+      @media (max-width: 575.98px) {
+        .contact-topbar-inner {
+          padding-right: 16px;
+          padding-left: 16px;
+        }
+
+        .contact-form {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-field-full,
+        .contact-submit {
+          grid-column: auto;
+        }
+
+        .contact-card {
+          padding: 22px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="contact-topbar">
+      <div class="contact-topbar-inner">
+        <a class="contact-brand" href="index.html" aria-label="Eyewear home">
+          <img src="images/logo.png" alt="Eyewear">
+        </a>
+        <a class="contact-home" href="index.html">Back to home</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="contact-hero" aria-labelledby="contact-heading">
+        <div class="contact-hero-inner">
+          <p class="contact-eyebrow">We’re here to help</p>
+          <h1 id="contact-heading">Let’s find the right pair for you.</h1>
+          <p>Questions about our eyewear, an order, delivery, or choosing a style? Get in touch and we’ll be happy to help.</p>
+        </div>
+      </section>
+
+      <div class="contact-content">
+        <section class="contact-cards" aria-label="Contact details">
+          <article class="contact-card">
+            <div class="contact-icon" aria-hidden="true">
+              <iconify-icon icon="mdi:phone"></iconify-icon>
+            </div>
+            <div>
+              <h2>Call us</h2>
+              <p>Speak with us by telephone.</p>
+              <a class="contact-action" href="tel:09054821670">09054821670</a>
+            </div>
+          </article>
+
+          <article class="contact-card">
+            <div class="contact-icon" aria-hidden="true">
+              <iconify-icon icon="ri:whatsapp-fill"></iconify-icon>
+            </div>
+            <div>
+              <h2>WhatsApp</h2>
+              <p>Send us a message on WhatsApp.</p>
+              <a class="contact-action" href="https://wa.me/2349022458259" target="_blank" rel="noopener noreferrer">
+                Message 09022458259
+              </a>
+            </div>
+          </article>
+        </section>
+
+        <div class="contact-lower">
+          <section class="contact-form-card" aria-labelledby="message-heading">
+            <h2 id="message-heading">Send us a message</h2>
+            <p>Fill in the details below and we’ll open WhatsApp with your message ready to send.</p>
+
+            <form class="contact-form" id="contact-form">
+              <div class="contact-field">
+                <label for="contact-name">Your name</label>
+                <input id="contact-name" name="name" type="text" autocomplete="name" required>
+              </div>
+              <div class="contact-field">
+                <label for="contact-email">Email address</label>
+                <input id="contact-email" name="email" type="email" autocomplete="email" required>
+              </div>
+              <div class="contact-field contact-field-full">
+                <label for="contact-topic">What can we help with?</label>
+                <select id="contact-topic" name="topic" required>
+                  <option value="" selected disabled>Choose a topic</option>
+                  <option>Product or style question</option>
+                  <option>Order enquiry</option>
+                  <option>Delivery question</option>
+                  <option>Returns or support</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="contact-field contact-field-full">
+                <label for="contact-message">Your message</label>
+                <textarea id="contact-message" name="message" placeholder="How can we help?" required></textarea>
+              </div>
+              <button class="contact-submit" type="submit">Continue to WhatsApp</button>
+            </form>
+          </section>
+
+          <aside class="contact-note">
+            <h2>How can we help?</h2>
+            <p>Ask us about frame styles, product details, placing an order, or getting support with a purchase.</p>
+            <p>For a quick enquiry, use the WhatsApp contact above. You can also call us directly using the telephone number on this page.</p>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <footer class="contact-footer">
+      <span>© 2026 Eyewear.</span>
+      <span class="mx-2" aria-hidden="true">·</span>
+      <a href="index.html">Back to the store</a>
+    </footer>
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script>
+      document.getElementById("contact-form").addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(event.currentTarget);
+        const message = [
+          "Hello, I have a question for Eyewear.",
+          `Name: ${formData.get("name")}`,
+          `Email: ${formData.get("email")}`,
+          `Topic: ${formData.get("topic")}`,
+          `Message: ${formData.get("message")}`,
+        ].join("\n");
+
+        window.location.href = `https://wa.me/2349022458259?text=${encodeURIComponent(message)}`;
+      });
+    </script>
+  </body>
+</html>
